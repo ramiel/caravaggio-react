@@ -3,12 +3,12 @@ import urlBuilder, { CaravaggioOptions } from './urlBuilder';
 import useCaravaggio from './useCaravaggio';
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  sets: [
+  sets: Array<
     {
       type?: string;
       rules: { [rule: string]: { opt: CaravaggioOptions; url?: string } };
-    },
-  ];
+    }
+  >;
 }
 
 const ImageSet: React.SFC<ImageProps> = ({ sets, ...otherProps }) => {
