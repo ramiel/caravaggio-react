@@ -16,7 +16,6 @@ const ImageSet: React.SFC<ImageProps> = ({ sets, ...otherProps }) => {
   const sources = sets.map((set) => {
     const srcSet = Object.entries(set.rules)
       .map(([rule, { opt, url }]) => {
-        console.log('->', opt)
         return `${urlBuilder(
           caravaggioUrl,
           url || (otherProps.src as string),
