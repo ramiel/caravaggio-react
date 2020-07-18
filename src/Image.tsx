@@ -1,5 +1,6 @@
 import React from 'react';
-import useCaravaggioImage, { CaravaggioOptions } from './useCaravaggioImage';
+import useCaravaggioImage from './useCaravaggioImage';
+import { CaravaggioOptions } from './urlBuilder';
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   opt: CaravaggioOptions
