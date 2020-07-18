@@ -1,6 +1,6 @@
 {
   "name": "caravaggio-react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Caravaggio react library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
