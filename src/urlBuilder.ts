@@ -1,3 +1,4 @@
+import { CaravaggioContext } from './CaravaggioProvider';
 
 export enum GRAVITY {
   c = 'center',
@@ -82,9 +83,13 @@ export interface CaravaggioOptions {
   };
 }
 
-const urlBuilder = (caravaggioUrl: string, imageUrl: string, opt: CaravaggioOptions) => {
+const urlBuilder = (
+  { url: caravaggioUrl, baseUrl }: CaravaggioContext,
+  imageUrl: string,
+  opt: CaravaggioOptions,
+): string => {
   const options = Object.entries(opt)
-  .map(([operation, value]) => {
+    .map(([operation, value]) => {
       if (typeof value !== 'object') {
         return `${operation}:${value}`;
       }
@@ -94,7 +99,10 @@ const urlBuilder = (caravaggioUrl: string, imageUrl: string, opt: CaravaggioOpti
       return `${operation},${valueString}`;
     })
     .join('/');
-  return `${caravaggioUrl}/${options}?image=${imageUrl}`;
-}
+  const finalImageUrl =
+    /^\.?\//.test(imageUrl) && baseUrl ? `${baseUrl}${imageUrl}` : imageUrl;
+  console.log(imageUrl, baseUrl);
+  return `${caravaggioUrl}/${options}?image=${finalImageUrl}`;
+};
 
 export default urlBuilder;

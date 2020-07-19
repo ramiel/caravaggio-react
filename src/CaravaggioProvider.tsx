@@ -2,18 +2,27 @@ import React from 'react';
 
 interface CaravaggioProviderProps {
   url: string;
+  baseUrl?: string;
 }
 
-export const CaravaggioContext = React.createContext<{
+export type CaravaggioContext = {
   url: string;
-} | null>(null);
+  baseUrl?: string;
+};
+
+export const CaravaggioContext = React.createContext<CaravaggioContext | null>(
+  null,
+);
 
 const CaravaggioProvider: React.SFC<CaravaggioProviderProps> = ({
   children,
   url,
+  baseUrl,
 }) => {
   return (
-    <CaravaggioContext.Provider value={{ url }}>{children}</CaravaggioContext.Provider>
+    <CaravaggioContext.Provider value={{ url, baseUrl }}>
+      {children}
+    </CaravaggioContext.Provider>
   );
 };
 

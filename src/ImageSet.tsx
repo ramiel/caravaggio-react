@@ -10,12 +10,12 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const ImageSet: React.SFC<ImageProps> = ({ sets, ...otherProps }) => {
-  const caravaggioUrl = useCaravaggio();
+  const context = useCaravaggio();
   const sources = sets.map((set, i) => {
     const srcSet = Object.entries(set.rules)
       .map(([rule, { opt, url }]) => {
         return `${urlBuilder(
-          caravaggioUrl,
+          context,
           url || (otherProps.src as string),
           opt,
         )} ${rule}`;

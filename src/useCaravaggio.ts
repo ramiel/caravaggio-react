@@ -9,7 +9,7 @@ const useCaravaggio = () => {
       'The "useCaravaggio" hook can be called only as descendant of CaravaggioProvider',
     );
   }
-  return context.url;
+  return context;
 };
 
 export default useCaravaggio;
