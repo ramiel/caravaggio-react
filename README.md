@@ -16,7 +16,7 @@ or
 npm install caravaggio-react
 ```
 
-This library is entirelly written in typescript.
+This library is entirelly written in `typescript`.
 
 ## Caravaggio Provider
 
@@ -69,11 +69,11 @@ import { Image } from 'caravaggio-react';
 
 In the above example we transform the image to `webp`, with a quality of `90`, a blur effect and resizing it to `640x480` pixels.
 
-Check Caravaggio documentation to know about all possible options.
+Check [Caravaggio documentation](https://caravaggio.ramielcreations.com) to know about all possible options.
 
 ## Image srcset
 
-You can generate a `srcset` using the `ImageSet` component.
+You can generate a [`srcset`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) using the `ImageSet` component.
 
 
 ```tsx
