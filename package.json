@@ -1,6 +1,6 @@
 {
   "name": "caravaggio-react",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "Caravaggio react library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -11,6 +11,7 @@
   "author": "Fabrizio Ruggeri <fabrizio.ruggeri@gmail.com>",
   "license": "MIT",
   "private": false,
+  "repository": "github:ramiel/caravaggio-react",
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "yarn clean && NODE_ENV=production rollup -c",
