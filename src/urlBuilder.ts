@@ -101,7 +101,9 @@ const urlBuilder = (
     .join('/');
   const finalImageUrl =
     /^\.?\//.test(imageUrl) && baseUrl ? `${baseUrl}${imageUrl}` : imageUrl;
-  return `${caravaggioUrl}/${options}?image=${finalImageUrl}`;
+  return `${caravaggioUrl}/${options}?image=${encodeURIComponent(
+    finalImageUrl,
+  )}`;
 };
 
 export default urlBuilder;
