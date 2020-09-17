@@ -1,6 +1,6 @@
 # caravaggio-react
 
-# next
+## next
 
   - Add explanation of parameters
   - `opt` is optional in Image component. If not passed, no transformation is applied and it behaves
