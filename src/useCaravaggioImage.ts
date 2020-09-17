@@ -3,7 +3,7 @@ import urlBuilder, { CaravaggioOptions } from './urlBuilder';
 
 const useCaravaggioImage = (
   imageUrl: string,
-  opt: CaravaggioOptions,
+  opt?: CaravaggioOptions,
 ): string => {
   const context = useCaravaggio();
   return urlBuilder(context, imageUrl, opt);

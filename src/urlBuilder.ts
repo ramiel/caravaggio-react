@@ -217,7 +217,7 @@ export interface CaravaggioOptions {
 const urlBuilder = (
   { url: caravaggioUrl, baseUrl }: CaravaggioContext,
   imageUrl: string,
-  opt: CaravaggioOptions,
+  opt: CaravaggioOptions = {},
 ): string => {
   const options = Object.entries(opt)
     .map(([operation, value]) => {
@@ -232,9 +232,9 @@ const urlBuilder = (
     .join('/');
   const finalImageUrl =
     /^\.?\//.test(imageUrl) && baseUrl ? `${baseUrl}${imageUrl}` : imageUrl;
-  return `${caravaggioUrl}/${options}?image=${encodeURIComponent(
-    finalImageUrl,
-  )}`;
+  return options
+    ? `${caravaggioUrl}/${options}?image=${encodeURIComponent(finalImageUrl)}`
+    : finalImageUrl;
 };
 
 export default urlBuilder;
