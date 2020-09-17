@@ -9,7 +9,7 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   }>;
 }
 
-const ImageSet: React.SFC<ImageProps> = ({ sets, ...otherProps }) => {
+const ImageSet: React.FC<ImageProps> = ({ sets, ...otherProps }) => {
   const context = useCaravaggio();
   const sources = sets.map((set, i) => {
     const srcSet = Object.entries(set.rules)
