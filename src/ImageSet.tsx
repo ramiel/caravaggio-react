@@ -1,15 +1,16 @@
 import React from 'react';
-import urlBuilder, { CaravaggioOptions } from './urlBuilder';
+import { CaravaggioOptions, urlBuilder } from './urlBuilder';
 import useCaravaggio from './useCaravaggio';
 
-interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageSetProps
+  extends React.ImgHTMLAttributes<HTMLImageElement> {
   sets: Array<{
     type?: string;
     rules: { [rule: string]: { opt: CaravaggioOptions; url?: string } };
   }>;
 }
 
-const ImageSet: React.FC<ImageProps> = ({ sets, ...otherProps }) => {
+export const ImageSet: React.FC<ImageSetProps> = ({ sets, ...otherProps }) => {
   const context = useCaravaggio();
   const sources = sets.map((set, i) => {
     const srcSet = Object.entries(set.rules)
@@ -36,5 +37,3 @@ const ImageSet: React.FC<ImageProps> = ({ sets, ...otherProps }) => {
     </picture>
   );
 };
-
-export default ImageSet;

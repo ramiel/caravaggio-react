@@ -44,7 +44,7 @@ export enum GRAVITY {
   gauto = 'attention',
 }
 
-type GRAVITY_KEYS = keyof typeof GRAVITY;
+export type GRAVITY_KEYS = keyof typeof GRAVITY;
 
 export interface CaravaggioOptions {
   o?: 'auto' | 'original' | 'jpg' | 'jpeg' | 'png' | 'tiff' | 'webp';
@@ -214,7 +214,7 @@ export interface CaravaggioOptions {
   };
 }
 
-const urlBuilder = (
+export const urlBuilder = (
   { url: caravaggioUrl, baseUrl }: CaravaggioContext,
   imageUrl: string,
   opt: CaravaggioOptions = {},
@@ -236,5 +236,3 @@ const urlBuilder = (
     ? `${caravaggioUrl}/${options}?image=${encodeURIComponent(finalImageUrl)}`
     : finalImageUrl;
 };
-
-export default urlBuilder;

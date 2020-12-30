@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface CaravaggioProviderProps {
+export interface CaravaggioProviderProps {
   url: string;
   baseUrl?: string;
 }
@@ -14,7 +14,7 @@ export const CaravaggioContext = React.createContext<CaravaggioContext | null>(
   null,
 );
 
-const CaravaggioProvider: React.SFC<CaravaggioProviderProps> = ({
+export const CaravaggioProvider: React.SFC<CaravaggioProviderProps> = ({
   children,
   url,
   baseUrl,
@@ -25,5 +25,3 @@ const CaravaggioProvider: React.SFC<CaravaggioProviderProps> = ({
     </CaravaggioContext.Provider>
   );
 };
-
-export default CaravaggioProvider;

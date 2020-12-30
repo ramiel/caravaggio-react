@@ -1,12 +1,10 @@
 import useCaravaggio from './useCaravaggio';
-import urlBuilder, { CaravaggioOptions } from './urlBuilder';
+import { CaravaggioOptions, urlBuilder } from './urlBuilder';
 
-const useCaravaggioImage = (
+export const useCaravaggioImage = (
   imageUrl: string,
   opt?: CaravaggioOptions,
 ): string => {
   const context = useCaravaggio();
   return urlBuilder(context, imageUrl, opt);
 };
-
-export default useCaravaggioImage;
