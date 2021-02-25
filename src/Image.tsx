@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCaravaggioImage } from './useCaravaggioImage';
+import { useCaravaggio } from './useCaravaggio';
 import { CaravaggioOptions } from './urlBuilder';
 
 export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -8,7 +8,7 @@ export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 
 export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
   ({ opt, src, ...otherProps }, ref) => {
-    const url = useCaravaggioImage(src as string, opt);
+    const url = useCaravaggio(src as string, opt);
     return <img src={url} {...otherProps} ref={ref} />;
   },
 );
