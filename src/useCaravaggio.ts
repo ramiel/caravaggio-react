@@ -1,15 +1,44 @@
+import { useCaravaggioContext } from './useCaravaggioContext';
+import { CaravaggioOptions, urlBuilder } from './urlBuilder';
 import { useContext } from 'react';
 import { CaravaggioContext } from './CaravaggioProvider';
 
-// This hook expose the Caravaggio url through the context
-const useCaravaggio = () => {
-  const context = useContext(CaravaggioContext);
-  if (!context) {
-    throw new Error(
-      'The "useCaravaggio" hook can be called only as descendant of CaravaggioProvider',
-    );
-  }
-  return context;
+export const useCaravaggio = (
+  imageUrl: string,
+  opt?: CaravaggioOptions,
+): string => {
+  const context = useCaravaggioContext();
+  return urlBuilder(context, imageUrl, opt);
 };
 
-export default useCaravaggio;
+/**
+ * Given an image, return the url with the transofmrations applied
+ * @param imageUrl The image to tranform
+ * @param opt Caravaggio options. @see https://caravaggio.ramielcreations.com/
+ */
+export const useCaravaggioImage = (
+  imageUrl: string,
+  opt?: CaravaggioOptions,
+): string => {
+  console.warn(
+    '@deprecated "useCaravaggioImage" is deprecated, its name changed to "useCaravaggio"',
+  );
+  return useCaravaggio(imageUrl, opt);
+};
+
+/**
+ * Same as useCaravaggioImage but return the original image if there's no context
+ * or no image
+ * @param imageUrl The optional image url
+ * @param opt The options
+ */
+export const useCaravaggioIfAvailable = (
+  imageUrl?: string | null,
+  opt?: CaravaggioOptions,
+) => {
+  const context = useContext(CaravaggioContext);
+  if (!context || !imageUrl) {
+    return imageUrl;
+  }
+  return urlBuilder(context, imageUrl, opt);
+};

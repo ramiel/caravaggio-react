@@ -1,6 +1,6 @@
 import React from 'react';
 import { CaravaggioOptions, urlBuilder } from './urlBuilder';
-import useCaravaggio from './useCaravaggio';
+import { useCaravaggioContext } from './useCaravaggioContext';
 
 export interface ImageSetProps
   extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -11,7 +11,7 @@ export interface ImageSetProps
 }
 
 export const ImageSet: React.FC<ImageSetProps> = ({ sets, ...otherProps }) => {
-  const context = useCaravaggio();
+  const context = useCaravaggioContext();
   const sources = sets.map((set, i) => {
     const srcSet = Object.entries(set.rules)
       .map(([rule, { opt, url }]) => {

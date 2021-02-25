@@ -1,4 +1,4 @@
-export * from './Image'
+export * from './Image';
 export * from './ImageSet';
-export * from './useCaravaggioImage';
+export * from './useCaravaggio';
 export * from './CaravaggioProvider';
