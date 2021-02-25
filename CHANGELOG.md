@@ -1,5 +1,8 @@
 # caravaggio-react
 
+## 1.0.1
+  - Package is marked as side-effects free
+
 ## 1.0.0
   - ⚠ Breaking changes
   - Image can be null when using hook `useCaravaggioIfAvailable`
