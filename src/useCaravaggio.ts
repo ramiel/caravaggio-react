@@ -3,6 +3,11 @@ import { CaravaggioOptions, urlBuilder } from './urlBuilder';
 import { useContext } from 'react';
 import { CaravaggioContext } from './CaravaggioProvider';
 
+/**
+ * Given an image, return the url with the transofmrations applied
+ * @param imageUrl The image to tranform
+ * @param opt Caravaggio options. @see https://caravaggio.ramielcreations.com/
+ */
 export const useCaravaggio = (
   imageUrl: string,
   opt?: CaravaggioOptions,
@@ -27,7 +32,7 @@ export const useCaravaggioImage = (
 };
 
 /**
- * Same as useCaravaggioImage but return the original image if there's no context
+ * Same as useCaravaggio but return the original image if there's no context
  * or no image
  * @param imageUrl The optional image url
  * @param opt The options
