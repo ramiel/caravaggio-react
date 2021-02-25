@@ -1,6 +1,6 @@
 # caravaggio-react
 
-## Next
+## 1.0.0
   - ⚠ Breaking changes
   - Image can be null when using hook `useCaravaggioIfAvailable`
   - "useCaravaggioImage" has been renamed to "useCarvaggio". the old name is deprecated
