@@ -40,7 +40,7 @@ export const useCaravaggioImage = (
 export const useCaravaggioIfAvailable = (
   imageUrl?: string | null,
   opt?: CaravaggioOptions,
-) => {
+): string | null | undefined => {
   const context = useContext(CaravaggioContext);
   if (!context || !imageUrl) {
     return imageUrl;
