@@ -47,3 +47,15 @@ export const useCaravaggioIfAvailable = (
   }
   return urlBuilder(context, imageUrl, opt);
 };
+
+type CaravaggioBuilder = (imageUrl: string, opt?: CaravaggioOptions) => string;
+/**
+ * Return a function that you can use to get transformed image urls
+ */
+export const useCaravaggioBuilder = (): CaravaggioBuilder => {
+  const context = useCaravaggioContext();
+  const builder: CaravaggioBuilder = (imageUrl, opt) => {
+    return urlBuilder(context, imageUrl, opt);
+  };
+  return builder;
+};
