@@ -1,5 +1,8 @@
 # caravaggio-react
 
+## 1.1.0
+  - Add useCaravaggioBuilder hook
+
 ## 1.0.1
   - Package is marked as side-effects free
 
