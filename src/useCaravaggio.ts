@@ -9,10 +9,11 @@ import { CaravaggioContext } from './CaravaggioProvider';
  * @param opt Caravaggio options. @see https://caravaggio.ramielcreations.com/
  */
 export const useCaravaggio = (
-  imageUrl: string,
+  imageUrl?: string,
   opt?: CaravaggioOptions,
-): string => {
+): string | undefined => {
   const context = useCaravaggioContext();
+  if(!imageUrl) return undefined;
   return urlBuilder(context, imageUrl, opt);
 };
 
@@ -24,7 +25,7 @@ export const useCaravaggio = (
 export const useCaravaggioImage = (
   imageUrl: string,
   opt?: CaravaggioOptions,
-): string => {
+): string | undefined => {
   console.warn(
     '@deprecated "useCaravaggioImage" is deprecated, its name changed to "useCaravaggio"',
   );
