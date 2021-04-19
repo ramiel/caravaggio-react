@@ -1,5 +1,8 @@
 # caravaggio-react
 
+## 1.2.0
+  - Can pass undefinied image to the hook, producing an undefined result
+
 ## 1.1.1
   - Accept 'auto' as rotate value
 
