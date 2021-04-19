@@ -169,7 +169,7 @@ export interface CaravaggioOptions {
     /**
      * Value, in degree, of the rotation angle
      */
-    v: number;
+    v: number | 'auto';
     /**
      * If the rotation is not multiple of 90°, this defines the background color
      * of the resulting area.
