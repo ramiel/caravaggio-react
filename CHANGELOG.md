@@ -1,5 +1,8 @@
 # caravaggio-react
 
+## 1.1.1
+  - Accept 'auto' as rotate value
+
 ## 1.1.0
   - Add useCaravaggioBuilder hook
 
