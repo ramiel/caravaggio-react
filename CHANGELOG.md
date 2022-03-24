@@ -1,5 +1,8 @@
 # caravaggio-react
 
+## 1.2.2
+  - Update some documentation
+
 ## 1.2.1
   - Improve README
 
